@@ -26,14 +26,62 @@ public class Lab4_SergioSuazoAlessandroReyes {
                     + "\n4. Terminar programa"
                     + "\nElija una opcion: ");
             int o = leer.nextInt();
+            
+            
             switch(o){
-                case 1:
-                    
+                case 1://crud equipo
+                    System.out.print("a. Crear equipo"
+                            + "\nb. Listar equipo/s"
+                            + "\nc. Modificar equipo/s"
+                            + "\nd  Eliminar equipo"
+                            + "\nELija una opcion: ");
+                    char op = leer.next().charAt(0);
+                    switch(op){
+                        case 'a':
+                            
+                            break;
+                        case 'b':
+                            
+                            break;
+                        case 'c':
+                            
+                            break;
+                        case 'd':
+                            
+                            break;
+                        default:
+                            
+                    }
                     break;
-                case 2:
-                    
+                case 2://crud jugador
+                    System.out.print("a. Crear jugador"
+                            + "\nb. Listar jugador/es"
+                            + "\nc. Modificar jugador/es"
+                            + "\nd. Eliminar jugador"
+                            + "\ne. Ver stats de un jugador"
+                            + "\nELija una opcion: ");
+                    op = leer.next().charAt(0);
+                    switch(op){
+                        case 'a':
+                            
+                            break;
+                        case 'b':
+                            
+                            break;
+                        case 'c':
+                            
+                            break;
+                        case 'd':
+                            
+                            break;
+                        case 'e':
+                            
+                            break;
+                        default:
+                            
+                    }
                     break;
-                case 3:
+                case 3://simulaciion del juego
                     
                     break;
                 case 4:
