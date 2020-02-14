@@ -47,7 +47,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                             int c = leer.nextInt();
                             if(c==1){
                                 for (int i = 0; i < equipos.size(); i++) {
-                                    if(equipos.get(i).getCasa.equals("Gryffindor")){
+                                    if(equipos.get(i).getCasa().equals("Gryffindor")){
                                         System.out.print("Esa casa ya tiene un equipo. ");
                                         break;
                                     }
@@ -59,7 +59,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 equipos.add(new Equipo());
                             }else if(c==2){
                                 for (int i = 0; i < equipos.size(); i++) {
-                                    if(equipos.get(i).getCasa.equals("Gryffindor")){
+                                    if(equipos.get(i).getCasa().equals("Slytherin")){
                                         System.out.println("Esa casa ya tiene un equipo. ");
                                         break;
                                     }
@@ -71,7 +71,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 equipos.add(new Equipo());
                             }else if(c==3){
                                 for (int i = 0; i < equipos.size(); i++) {
-                                    if(equipos.get(i).getCasa.equals("Gryffindor")){
+                                    if(equipos.get(i).getCasa().equals("Ravenclaw")){
                                         System.out.println("Esa casa ya tiene un equipo. ");
                                         break;
                                     }
@@ -83,7 +83,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 equipos.add(new Equipo());
                             }else if(c==4){
                                 for (int i = 0; i < equipos.size(); i++) {
-                                    if(equipos.get(i).getCasa.equals("Gryffindor")){
+                                    if(equipos.get(i).getCasa().equals("Hufflepuff")){
                                         System.out.println("Esa casa ya tiene un equipo. ");
                                         break;
                                     }
@@ -135,8 +135,51 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                         + "De que casa proviene: ");
                                 int c = leer.nextInt();
                                 if(c == 1){
+                                    int v=0;
                                     for (int i = 0; i < equipos.size(); i++) {
-                                        
+                                        if(equipos.get(i).getCasa().equals("Gryffindor"))
+                                            v=i;
+                                    }
+                                    if(equipos.get(v).getJugadores().size() == 7){
+                                        System.out.println("Error, este equipo ya tiene todos sus jugadores.");
+                                        break;
+                                    }else{
+                                        System.out.print("Cual es el nombre del jugador: ");
+                                        String n = leer.nextLine();
+                                        System.out.print("Que año cursa en Hogwarts: ");
+                                        int a = leer.nextInt();
+                                        System.out.println("Cual es el numero del uniforme: ");
+                                        int num = leer.nextInt();
+                                        boolean ver =true;
+                                        while(ver){
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i).getNumero() == num){
+                                                    System.out.println("ELiga otro numero de camisa, el seleccionado, ya esta en uso: ");
+                                                    num = leer.nextInt();
+                                                }else
+                                                    break;
+                                            }
+                                        }
+                                        System.out.println("1. Guardian"
+                                                + "\n2. Golpeador"
+                                                + "\n3. Cazador"
+                                                + "\n4. Buscador");
+                                        int pos = leer.nextInt();
+                                        if(pos==1){
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Guardian){
+                                                    System.out.println("ELiga otro numero de camisa, el seleccionado, ya esta en uso: ");
+                                                    num = leer.nextInt();
+                                                }else
+                                                    break;
+                                            }
+                                        }else if(pos==2){
+                                            
+                                        }else if(pos==3){
+                                            
+                                        }else if(pos==4){
+                                            
+                                        } 
                                     }
                                 }else if(c==2){
                                     
