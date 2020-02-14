@@ -12,7 +12,8 @@ public class Lab4_SergioSuazoAlessandroReyes {
     public static Scanner leer = new Scanner(System.in);
     public static Random random = new Random();
     
-    
+    public static ArrayList<Equipo> equipos = new ArrayList();
+    public static ArrayList<Jugador> jugadores = new ArrayList();
     
     
     
@@ -37,16 +38,67 @@ public class Lab4_SergioSuazoAlessandroReyes {
                             + "\nELija una opcion: ");
                     char op = leer.next().charAt(0);
                     switch(op){
-                        case 'a':
+                        case 'a'://crear
+                            System.out.print("1. Gryffindor"
+                                    + "\n2. Slytherin"
+                                    + "\n3. Ravenclaw"
+                                    + "\n4. Hufflepuff"
+                                    + "De que casa proviene: ");
+                            int c = leer.nextInt();
+                            if(c==1){
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if(equipos.get(i).getCasa.equals("Gryffindor")){
+                                        System.out.print("Esa casa ya tiene un equipo. ");
+                                        break;
+                                    }
+                                }
+                                System.out.print("Cuantos partidos tiene ganados: ");
+                                int pg = leer.nextInt();
+                                System.out.print("Cuantos partidos tiene perdidos: ");
+                                int pp = leer.nextInt();
+                                
+                            }else if(c==2){
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if(equipos.get(i).getCasa.equals("Gryffindor")){
+                                        System.out.println("Esa casa ya tiene un equipo. ");
+                                        break;
+                                    }
+                                }
+                                System.out.print("Cuantos partidos tiene ganados: ");
+                                int pg = leer.nextInt();
+                                System.out.print("Cuantos partidos tiene perdidos: ");
+                                int pp = leer.nextInt();
+                            }else if(c==3){
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if(equipos.get(i).getCasa.equals("Gryffindor")){
+                                        System.out.println("Esa casa ya tiene un equipo. ");
+                                        break;
+                                    }
+                                }
+                                System.out.print("Cuantos partidos tiene ganados: ");
+                                int pg = leer.nextInt();
+                                System.out.print("Cuantos partidos tiene perdidos: ");
+                                int pp = leer.nextInt();
+                            }else if(c==4){
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if(equipos.get(i).getCasa.equals("Gryffindor")){
+                                        System.out.println("Esa casa ya tiene un equipo. ");
+                                        break;
+                                    }
+                                }
+                                System.out.print("Cuantos partidos tiene ganados: ");
+                                int pg = leer.nextInt();
+                                System.out.print("Cuantos partidos tiene perdidos: ");
+                                int pp = leer.nextInt();
+                            }
+                            break;
+                        case 'b'://listar
                             
                             break;
-                        case 'b':
+                        case 'c'://modifcar
                             
                             break;
-                        case 'c':
-                            
-                            break;
-                        case 'd':
+                        case 'd'://eliminar
                             
                             break;
                         default:
@@ -62,19 +114,19 @@ public class Lab4_SergioSuazoAlessandroReyes {
                             + "\nELija una opcion: ");
                     op = leer.next().charAt(0);
                     switch(op){
-                        case 'a':
+                        case 'a'://Crear
                             
                             break;
-                        case 'b':
+                        case 'b'://listar
                             
                             break;
-                        case 'c':
+                        case 'c'://modificar
                             
                             break;
-                        case 'd':
+                        case 'd'://eliminar
                             
                             break;
-                        case 'e':
+                        case 'e'://ver starts
                             
                             break;
                         default:
