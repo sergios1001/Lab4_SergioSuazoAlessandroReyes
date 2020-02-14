@@ -56,7 +56,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 int pg = leer.nextInt();
                                 System.out.print("Cuantos partidos tiene perdidos: ");
                                 int pp = leer.nextInt();
-                                
+                                equipos.add(new Equipo());
                             }else if(c==2){
                                 for (int i = 0; i < equipos.size(); i++) {
                                     if(equipos.get(i).getCasa.equals("Gryffindor")){
@@ -68,6 +68,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 int pg = leer.nextInt();
                                 System.out.print("Cuantos partidos tiene perdidos: ");
                                 int pp = leer.nextInt();
+                                equipos.add(new Equipo());
                             }else if(c==3){
                                 for (int i = 0; i < equipos.size(); i++) {
                                     if(equipos.get(i).getCasa.equals("Gryffindor")){
@@ -79,6 +80,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 int pg = leer.nextInt();
                                 System.out.print("Cuantos partidos tiene perdidos: ");
                                 int pp = leer.nextInt();
+                                equipos.add(new Equipo());
                             }else if(c==4){
                                 for (int i = 0; i < equipos.size(); i++) {
                                     if(equipos.get(i).getCasa.equals("Gryffindor")){
@@ -90,16 +92,24 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 int pg = leer.nextInt();
                                 System.out.print("Cuantos partidos tiene perdidos: ");
                                 int pp = leer.nextInt();
+                                equipos.add(new Equipo());
                             }
                             break;
                         case 'b'://listar
-                            
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+") "+equipos.get(i).getCasa());
+                            }
                             break;
                         case 'c'://modifcar
                             
                             break;
                         case 'd'://eliminar
-                            
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+") "+equipos.get(i).getCasa());
+                            }
+                            System.out.println("Elija el numero del equipo que desea eliminar");
+                            int del = leer.nextInt();
+                            equipos.remove(del);
                             break;
                         default:
                             
@@ -115,16 +125,43 @@ public class Lab4_SergioSuazoAlessandroReyes {
                     op = leer.next().charAt(0);
                     switch(op){
                         case 'a'://Crear
-                            
+                            if(equipos.isEmpty()){
+                                System.out.println("No se pueden crear jugadores si no hay equipos creados.");
+                            }else{
+                                System.out.print("1. Gryffindor"
+                                        + "\n2. Slytherin"
+                                        + "\n3. Ravenclaw"
+                                        + "\n4. Hufflepuff"
+                                        + "De que casa proviene: ");
+                                int c = leer.nextInt();
+                                if(c == 1){
+                                    for (int i = 0; i < equipos.size(); i++) {
+                                        
+                                    }
+                                }else if(c==2){
+                                    
+                                }else if(c==3){
+                                    
+                                }else if(c==4){
+                                    
+                                }
+                            }
                             break;
                         case 'b'://listar
-                            
+                            for (int i = 0; i < jugadores.size(); i++) {
+                                System.out.println(i+") "+jugadores.get(i).getNombre());
+                            }
                             break;
                         case 'c'://modificar
                             
                             break;
                         case 'd'://eliminar
-                            
+                            for (int i = 0; i < jugadores.size(); i++) {
+                                System.out.println(i+") "+jugadores.get(i).getNombre());
+                            }
+                            System.out.println("Elija el numero del equipo que desea eliminar");
+                            int del = leer.nextInt();
+                            jugadores.remove(del);
                             break;
                         case 'e'://ver starts
                             
