@@ -101,7 +101,27 @@ public class Lab4_SergioSuazoAlessandroReyes {
                             }
                             break;
                         case 'c'://modifcar
-                            
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i+") "+equipos.get(i).getCasa());
+                            }
+                            System.out.print("Elija el numero del equipo que quiere modificar.");
+                            int mod = leer.nextInt();
+                            System.out.print("Desea quitarle la capitania al capitan actual [s/n]: ");
+                            char el = leer.next().charAt(0);
+                            if(el=='s'||el=='S'){
+                                System.out.print("EL jugador ya no es el capitan, desea elegir uno nuevo[s/n]: ");
+                                equipos.get(mod).setCapitan(null);
+                                el = leer.next().charAt(0);
+                                if(el=='s'||el=='S'){
+                                    for (int i = 0; i < equipos.get(mod).getJugadores().size(); i++) {
+                                        System.out.println(i+") "+equipos.get(mod).getJugadores().get(i).getNombre());
+                                    }
+                                    System.out.print("Elija el numero del jugador que quiere de capitan.");
+                                    int nc = leer.nextInt();
+                                    equipos.get(mod).setCapitan(equipos.get(mod).getJugadores().get(nc));
+                                    System.out.println("Se le dio la capitania con exito.");
+                                }
+                            }
                             break;
                         case 'd'://eliminar
                             for (int i = 0; i < equipos.size(); i++) {
@@ -154,8 +174,134 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                         while(ver){
                                             for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
                                                 if(equipos.get(v).getJugadores().get(i).getNumero() == num){
+                                                    System.out.println("ELija otro numero de camisa, el seleccionado, ya esta en uso: ");
+                                                    num = leer.nextInt();
+                                                    ver = false;
+                                                    
+                                                }
+                                            }
+                                        }
+                                        System.out.println("1. Guardian"
+                                                + "\n2. Golpeador"
+                                                + "\n3. Cazador"
+                                                + "\n4. Buscador");
+                                        int pos = leer.nextInt();
+                                        if(pos==1){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Guardian){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el reflejo del guardian(1-10): ");
+                                                int stats = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Guardian(stats, n, "Gryffindor", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Guardian(stats, n, "Gryffindor", a, num));
+                                                equipos.get(v).getJugadores().add(new Guardian(stats, n, "Gryffindor", a, num));
+                                            }
+                                        }else if(pos==2){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Golpeador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es la musculatura del Golpeador(1-15): ");
+                                                int stats = leer.nextInt();
+                                                System.out.println("Cual es el reflejo del Golpeador(1-10): ");
+                                                int stat = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    if(cap == 's' || cap == 'S')
+                                                        equipos.get(v).setCapitan(new Golpeador(stats, stat, n, "Gryffindor", a, num));
+                                                }
+                                                jugadores.add(new Golpeador(stats, stat, n, "Gryffindor", a, num));
+                                                equipos.get(v).getJugadores().add(new Golpeador(stats, stat, n, "Gryffindor", a, num));
+                                            }
+                                        }else if(pos==3){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Cazador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el reflejo del Cazador(1-15): ");
+                                                int stats = leer.nextInt();
+                                                System.out.println("Cual es el peso del cazador: ");
+                                                int stat = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    if(cap == 's' || cap == 'S')
+                                                        equipos.get(v).setCapitan(new Cazador(stat, stats, n, "Gryffindor", a, num));
+                                                }
+                                                jugadores.add(new Cazador(stat, stats, n, "Gryffindor", a, num));
+                                                equipos.get(v).getJugadores().add(new Cazador(stat, stats, n, "Gryffindor", a, num));
+                                            }
+                                        }else if(pos==4){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Buscador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el peso del Bucador: ");
+                                                int stats = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    if(cap == 's' || cap == 'S')
+                                                        equipos.get(v).setCapitan(new Buscador(stats, n, "Gryffindor", a, num));
+                                                }
+                                                jugadores.add(new Buscador(stats, n, "Gryffindor", a, num));
+                                                equipos.get(v).getJugadores().add(new Buscador(stats, n, "Gryffindor", a, num));
+                                            }
+                                        } 
+                                    }
+                                }else if(c==2){
+                                    int v=0;
+                                    for (int i = 0; i < equipos.size(); i++) {
+                                        if(equipos.get(i).getCasa().equals("Slytherin"))
+                                            v=i;
+                                    }
+                                    if(equipos.get(v).getJugadores().size() == 7){
+                                        System.out.println("Error, este equipo ya tiene todos sus jugadores.");
+                                        break;
+                                    }else{
+                                        System.out.print("Cual es el nombre del jugador: ");
+                                        String n = leer.nextLine();
+                                        System.out.print("Que año cursa en Hogwarts: ");
+                                        int a = leer.nextInt();
+                                        System.out.println("Cual es el numero del uniforme: ");
+                                        int num = leer.nextInt();
+                                        boolean ver =true;
+                                        while(ver){
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i).getNumero() == num){
                                                     System.out.println("ELiga otro numero de camisa, el seleccionado, ya esta en uso: ");
                                                     num = leer.nextInt();
+                                                    ver = false;
                                                 }else
                                                     break;
                                             }
@@ -166,27 +312,366 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                 + "\n4. Buscador");
                                         int pos = leer.nextInt();
                                         if(pos==1){
+                                            boolean x = true;
                                             for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
                                                 if(equipos.get(v).getJugadores().get(i) instanceof Guardian){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el reflejo del guardian(1-10): ");
+                                                int stats = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Guardian(stats, n, "Slytherin", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Guardian(stats, n, "Slytherin", a, num));
+                                                equipos.get(v).getJugadores().add(new Guardian(stats, n, "Slytherin", a, num));
+                                            }
+                                        }else if(pos==2){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Golpeador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es la musculatura del Golpeador(1-15): ");
+                                                int stats = leer.nextInt();
+                                                System.out.println("Cual es el reflejo del Golpeador(1-10): ");
+                                                int stat = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    if(cap == 's' || cap == 'S')
+                                                        equipos.get(v).setCapitan(new Golpeador(stats, stat, n, "Slytherin", a, num));
+                                                }
+                                                jugadores.add(new Golpeador(stats, stat, n, "Slytherin", a, num));
+                                                equipos.get(v).getJugadores().add(new Golpeador(stats, stat, n, "Slytherin", a, num));
+                                            }
+                                        }else if(pos==3){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Cazador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el reflejo del Cazador(1-15): ");
+                                                int stats = leer.nextInt();
+                                                System.out.println("Cual es el peso del cazador: ");
+                                                int stat = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    if(cap == 's' || cap == 'S')
+                                                        equipos.get(v).setCapitan(new Cazador(stat, stats, n, "Slytherin", a, num));
+                                                }
+                                                jugadores.add(new Cazador(stat, stats, n, "Slytherin", a, num));
+                                                equipos.get(v).getJugadores().add(new Cazador(stat, stats, n, "Slytherin", a, num));
+                                            }
+                                        }else if(pos==4){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Buscador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el peso del Bucador: ");
+                                                int stats = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    if(cap == 's' || cap == 'S')
+                                                        equipos.get(v).setCapitan(new Buscador(stats, n, "Slytherin", a, num));
+                                                }
+                                                jugadores.add(new Buscador(stats, n, "Slytherin", a, num));
+                                                equipos.get(v).getJugadores().add(new Buscador(stats, n, "Slytherin", a, num));
+                                            }
+                                        } 
+                                    }
+                                }else if(c==3){
+                                    int v=0;
+                                    for (int i = 0; i < equipos.size(); i++) {
+                                        if(equipos.get(i).getCasa().equals("Ravenclaw"))
+                                            v=i;
+                                    }
+                                    if(equipos.get(v).getJugadores().size() == 7){
+                                        System.out.println("Error, este equipo ya tiene todos sus jugadores.");
+                                        break;
+                                    }else{
+                                        System.out.print("Cual es el nombre del jugador: ");
+                                        String n = leer.nextLine();
+                                        System.out.print("Que año cursa en Hogwarts: ");
+                                        int a = leer.nextInt();
+                                        System.out.println("Cual es el numero del uniforme: ");
+                                        int num = leer.nextInt();
+                                        boolean ver =true;
+                                        while(ver){
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i).getNumero() == num){
                                                     System.out.println("ELiga otro numero de camisa, el seleccionado, ya esta en uso: ");
                                                     num = leer.nextInt();
+                                                    ver = false;
                                                 }else
                                                     break;
                                             }
+                                        }
+                                        System.out.println("1. Guardian"
+                                                + "\n2. Golpeador"
+                                                + "\n3. Cazador"
+                                                + "\n4. Buscador");
+                                        int pos = leer.nextInt();
+                                        if(pos==1){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Guardian){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el reflejo del guardian(1-10): ");
+                                                int stats = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Guardian(stats, n, "Ravenclaw", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Guardian(stats, n, "Ravenclaw", a, num));
+                                                equipos.get(v).getJugadores().add(new Guardian(stats, n, "Ravenclaw", a, num));
+                                            }
                                         }else if(pos==2){
-                                            
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Golpeador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es la musculatura del Golpeador(1-15): ");
+                                                int stats = leer.nextInt();
+                                                System.out.println("Cual es el reflejo del Golpeador(1-10): ");
+                                                int stat = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Golpeador(stats, stat, n, "Ravenclaw", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Golpeador(stats, stat, n, "Ravenclaw", a, num));
+                                                equipos.get(v).getJugadores().add(new Golpeador(stats, stat, n, "Ravenclaw", a, num));
+                                            }
                                         }else if(pos==3){
-                                            
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Cazador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el reflejo del Cazador(1-15): ");
+                                                int stats = leer.nextInt();
+                                                System.out.println("Cual es el peso del cazador: ");
+                                                int stat = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Cazador(stat, stats, n, "Ravenclaw", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Cazador(stat, stats, n, "Ravenclaw", a, num));
+                                                equipos.get(v).getJugadores().add(new Cazador(stat, stats, n, "Ravenclaw", a, num));
+                                            }
                                         }else if(pos==4){
-                                            
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Buscador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el peso del Bucador: ");
+                                                int stats = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Buscador(stats, n, "Ravenclaw", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Buscador(stats, n, "Ravenclaw", a, num));
+                                                equipos.get(v).getJugadores().add(new Buscador(stats, n, "Ravenclaw", a, num));
+                                            }
                                         } 
                                     }
-                                }else if(c==2){
-                                    
-                                }else if(c==3){
-                                    
                                 }else if(c==4){
-                                    
+                                    int v=0;
+                                    for (int i = 0; i < equipos.size(); i++) {
+                                        if(equipos.get(i).getCasa().equals("Hufflepuff"))
+                                            v=i;
+                                    }
+                                    if(equipos.get(v).getJugadores().size() == 7){
+                                        System.out.println("Error, este equipo ya tiene todos sus jugadores.");
+                                        break;
+                                    }else{
+                                        System.out.print("Cual es el nombre del jugador: ");
+                                        String n = leer.nextLine();
+                                        System.out.print("Que año cursa en Hogwarts: ");
+                                        int a = leer.nextInt();
+                                        System.out.println("Cual es el numero del uniforme: ");
+                                        int num = leer.nextInt();
+                                        boolean ver =true;
+                                        while(ver){
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i).getNumero() == num){
+                                                    System.out.println("ELiga otro numero de camisa, el seleccionado, ya esta en uso: ");
+                                                    num = leer.nextInt();
+                                                    ver = false;
+                                                }else
+                                                    break;
+                                            }
+                                        }
+                                        System.out.println("1. Guardian"
+                                                + "\n2. Golpeador"
+                                                + "\n3. Cazador"
+                                                + "\n4. Buscador");
+                                        int pos = leer.nextInt();
+                                        if(pos==1){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Guardian){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el reflejo del guardian(1-10): ");
+                                                int stats = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Guardian(stats, n, "Hufflepuff", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Guardian(stats, n, "Hufflepuff", a, num));
+                                                equipos.get(v).getJugadores().add(new Guardian(stats, n, "Hufflepuff", a, num));
+                                            }
+                                        }else if(pos==2){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Golpeador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es la musculatura del Golpeador(1-15): ");
+                                                int stats = leer.nextInt();
+                                                System.out.println("Cual es el reflejo del Golpeador(1-10): ");
+                                                int stat = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Golpeador(stats, stat, n, "Hufflepuff", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Golpeador(stats, stat, n, "Hufflepuff", a, num));
+                                                equipos.get(v).getJugadores().add(new Golpeador(stats, stat, n, "Hufflepuff", a, num));
+                                            }
+                                        }else if(pos==3){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Cazador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el reflejo del Cazador(1-15): ");
+                                                int stats = leer.nextInt();
+                                                System.out.println("Cual es el peso del cazador: ");
+                                                int stat = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Cazador(stat, stats, n, "Hufflepuff", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Cazador(stat, stats, n, "Hufflepuff", a, num));
+                                                equipos.get(v).getJugadores().add(new Cazador(stat, stats, n, "Hufflepuff", a, num));
+                                            }
+                                        }else if(pos==4){
+                                            boolean x = true;
+                                            for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
+                                                if(equipos.get(v).getJugadores().get(i) instanceof Buscador){
+                                                    System.out.println("Ya existe un guardian en el equipo.");
+                                                    x=false;
+                                                    break;
+                                                }
+                                            }
+                                            while(x){
+                                                System.out.println("Cual es el peso del Bucador: ");
+                                                int stats = leer.nextInt();
+                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                    System.out.println("Quiere que este sea su capitan[s/n]: ");
+                                                    char cap = leer.next().charAt(0);
+                                                    
+                                                    if(cap == 's' || cap == 'S'){
+                                                        equipos.get(v).setCapitan(new Buscador(stats, n, "Hufflepuff", a, num));
+                                                    }
+                                                    
+                                                }
+                                                jugadores.add(new Buscador(stats, n, "Hufflepuff", a, num));
+                                                equipos.get(v).getJugadores().add(new Buscador(stats, n, "Hufflepuff", a, num));
+                                            }
+                                        } 
+                                    }
                                 }
                             }
                             break;
@@ -202,12 +687,29 @@ public class Lab4_SergioSuazoAlessandroReyes {
                             for (int i = 0; i < jugadores.size(); i++) {
                                 System.out.println(i+") "+jugadores.get(i).getNombre());
                             }
-                            System.out.println("Elija el numero del equipo que desea eliminar");
+                            System.out.print("Elija el numero del jugador que desea eliminar");
                             int del = leer.nextInt();
+                            int del2=0;
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if(jugadores.get(del).getCasa().equals(equipos.get(i).getCasa())){
+                                    del2 = leer.nextInt();
+                                }
+                            }
+                            for (int i = 0; i < equipos.get(del2).getJugadores().size(); i++) {
+                                if(jugadores.get(del).getNumero() == equipos.get(del2).getJugadores().get(i).getNumero()){
+                                    equipos.get(del2).getJugadores().remove(i);
+                                }
+                            }
                             jugadores.remove(del);
+                            System.out.println("Jugador eliminado con exito.");
                             break;
                         case 'e'://ver starts
-                            
+                            for (int i = 0; i < jugadores.size(); i++) {
+                                System.out.println(i+") "+jugadores.get(i).getNombre());
+                            }
+                            System.out.print("Elija el numero del jugador que quiere visualizar los stats: ");
+                            int st = leer.nextInt();
+                            System.out.println(jugadores.get(st));
                             break;
                         default:
                             
