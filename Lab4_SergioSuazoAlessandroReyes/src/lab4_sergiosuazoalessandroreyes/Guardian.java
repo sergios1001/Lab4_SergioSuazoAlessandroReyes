@@ -37,8 +37,15 @@ public class Guardian extends Jugador{
     }
 
     @Override
-    public void Trampa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean Trampa(int i) {
+        if(i<=13)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    
+
 }

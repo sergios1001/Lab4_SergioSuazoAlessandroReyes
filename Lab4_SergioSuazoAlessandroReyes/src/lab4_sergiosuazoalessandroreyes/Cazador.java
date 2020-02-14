@@ -63,12 +63,27 @@ public class Cazador extends Jugador{
     
     @Override
     public boolean Juego(int j,boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(velocidad+agilidad>j)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     @Override
-    public void Trampa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean Trampa(int i) {
+        if(i<=10)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    
+
+
 }

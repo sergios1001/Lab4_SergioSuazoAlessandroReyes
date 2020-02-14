@@ -53,11 +53,6 @@ public class Golpeador extends Jugador{
     }
     
     @Override
-    public void Trampa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public boolean Juego(int j,boolean b) {
         if (b)
         {
@@ -80,6 +75,18 @@ public class Golpeador extends Jugador{
             {
                 return false;
             }
+        }
+    }
+
+    @Override
+    public boolean Trampa(int i) {
+        if(i<=22)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
     

@@ -61,5 +61,5 @@ public abstract class Jugador {
     }
     
     public abstract boolean Juego(int j,boolean b);
-    public abstract void Trampa();
+    public abstract boolean Trampa(int i);
 }

@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package lab4_sergiosuazoalessandroreyes;
-
 /**
  *
  * @author Sergio
@@ -45,12 +44,27 @@ public class Buscador extends Jugador{
     
     @Override
     public boolean Juego(int j,boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if((velocidad/14+14>j))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     @Override
-    public void Trampa() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean Trampa(int i) {
+        if(i<=5)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    
+
+
 }
