@@ -18,8 +18,32 @@ public class Lab4_SergioSuazoAlessandroReyes {
     
     
     public static void main(String[] args) {
-        
-    }
+        boolean r=true;
+        while(r){
+            System.out.print("1. CRUD Equipo" 
+                    + "\n2. CRUD Jugadores" 
+                    + "\n3. Simulación del Juego}"
+                    + "\n4. Terminar programa"
+                    + "\nElija una opcion: ");
+            int o = leer.nextInt();
+            switch(o){
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    r = false;
+                    break;
+                default:
+                    r = false;
+            }//fin del switch menu
+        }//fin del while menu
+    }//fin del main
     
 
 
