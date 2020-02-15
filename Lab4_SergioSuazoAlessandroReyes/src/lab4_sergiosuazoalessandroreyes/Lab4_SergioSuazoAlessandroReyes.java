@@ -180,7 +180,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                     for (int i = 0; i < equipos.size(); i++) {
                                         if(equipos.get(i).getCasa().equals("Gryffindor")){
                                             v=i;
-                                        }else if(i == equipos.size()-1 || !equipos.get(i).getCasa().equals("Gryffindor")){
+                                        }else if(i == equipos.size()-1 && !equipos.get(i).getCasa().equals("Gryffindor")){
                                             System.out.println("El equipo no existe.");
                                             ap = false;
                                         }
@@ -344,7 +344,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                         if(equipos.get(i).getCasa().equals("Slytherin")){
                                             v=i;
                                             break;
-                                        }else if(i == equipos.size()-1 || !equipos.get(i).getCasa().equals("Slytherin")){
+                                        }else if(i == equipos.size()-1 && !equipos.get(i).getCasa().equals("Slytherin")){
                                             System.out.println("El equipo no existe.");
                                             ap = false;
                                         }
@@ -673,7 +673,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                     for (int i = 0; i < equipos.size(); i++) {
                                         if(equipos.get(i).getCasa().equals("Hufflepuff")){
                                             break;
-                                        }else if(i == equipos.size()-1 || !equipos.get(i).getCasa().equals("Hufflepuff")){
+                                        }else if(i == equipos.size()-1 && !equipos.get(i).getCasa().equals("Hufflepuff")){
                                             System.out.println("El equipo no existe.");
                                             ap = false;
                                         }
@@ -863,11 +863,12 @@ public class Lab4_SergioSuazoAlessandroReyes {
                             System.out.print("1) Nombre"
                                     + "\n2) año que cursa en Hogwarts"
                                     + "\n3) Numero de uniforme"
-                                    + "\nQue desea modificar de este jugador");
+                                    + "\nQue desea modificar de este jugador: ");
                             int mod1 = leer.nextInt();
                             switch(mod1){
                                 case 1:
                                     System.out.print("Cual es el nuevo nombre que le quiere poner: ");
+                                    leer.nextLine();
                                     String nom = leer.nextLine();
                                     if(cap){
                                         equipos.get(me).getCapitan().setNombre(nom);
