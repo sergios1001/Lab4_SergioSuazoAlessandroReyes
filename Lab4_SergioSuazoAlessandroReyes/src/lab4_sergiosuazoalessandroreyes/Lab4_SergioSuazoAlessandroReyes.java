@@ -1,5 +1,6 @@
 package lab4_sergiosuazoalessandroreyes;
 
+import java.awt.Color;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -161,9 +162,13 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             v=i;
                                     }
                                     if(equipos.get(v).getJugadores().size() == 7){
-                                        System.out.println("Error, este equipo ya tiene todos sus jugadores.");
-                                        break;
-                                    }else{
+                                        try {
+                                            validarcant(v);
+                                        } catch (Misexcepcionts ex) {
+                                            System.out.println(ex.getMessage());
+                                            break;
+                                        }
+                                    } else {
                                         System.out.print("Cual es el nombre del jugador: ");
                                         String n = leer.nextLine();
                                         System.out.print("Que año cursa en Hogwarts: ");
@@ -198,7 +203,13 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el reflejo del guardian(1-10): ");
                                                 int stats = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                try {
+                                                    validarOReflejo(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -222,9 +233,21 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es la musculatura del Golpeador(1-15): ");
                                                 int stats = leer.nextInt();
+                                                try {
+                                                    validarMusc(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
                                                 System.out.println("Cual es el reflejo del Golpeador(1-10): ");
                                                 int stat = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                try {
+                                                    validarOReflejo(stat);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                if (equipos.get(v).getCapitan().getNombre() == null) {
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     if(cap == 's' || cap == 'S')
@@ -245,9 +268,16 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el reflejo del Cazador(1-15): ");
                                                 int stats = leer.nextInt();
+                                                try {
+                                                    validarOReflejo(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
                                                 System.out.println("Cual es el peso del cazador: ");
                                                 int stat = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     if(cap == 's' || cap == 'S')
@@ -268,7 +298,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el peso del Bucador: ");
                                                 int stats = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     if(cap == 's' || cap == 'S')
@@ -323,7 +353,13 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el reflejo del guardian(1-10): ");
                                                 int stats = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                try {
+                                                    validarOReflejo(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -347,9 +383,22 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es la musculatura del Golpeador(1-15): ");
                                                 int stats = leer.nextInt();
+                                                try {
+                                                    validarMusc(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
                                                 System.out.println("Cual es el reflejo del Golpeador(1-10): ");
                                                 int stat = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                
+                                                try {
+                                                    validarOReflejo(stat);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     if(cap == 's' || cap == 'S')
@@ -368,11 +417,17 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                 }
                                             }
                                             while(x){
-                                                System.out.println("Cual es el reflejo del Cazador(1-15): ");
+                                                System.out.println("Cual es el reflejo del Cazador(1-10): ");
                                                 int stats = leer.nextInt();
+                                                try {
+                                                    validarOReflejo(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
                                                 System.out.println("Cual es el peso del cazador: ");
                                                 int stat = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     if(cap == 's' || cap == 'S')
@@ -393,7 +448,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el peso del Bucador: ");
                                                 int stats = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     if(cap == 's' || cap == 'S')
@@ -448,7 +503,13 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el reflejo del guardian(1-10): ");
                                                 int stats = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                try {
+                                                    validarOReflejo(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -472,9 +533,22 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es la musculatura del Golpeador(1-15): ");
                                                 int stats = leer.nextInt();
+                                                try {
+                                                    validarMusc(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                
                                                 System.out.println("Cual es el reflejo del Golpeador(1-10): ");
                                                 int stat = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                try {
+                                                    validarOReflejo(stat);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -498,9 +572,15 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el reflejo del Cazador(1-15): ");
                                                 int stats = leer.nextInt();
+                                                try {
+                                                    validarOReflejo(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
                                                 System.out.println("Cual es el peso del cazador: ");
                                                 int stat = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -524,7 +604,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el peso del Bucador: ");
                                                 int stats = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -582,7 +662,13 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el reflejo del guardian(1-10): ");
                                                 int stats = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                try {
+                                                    validarOReflejo(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -606,9 +692,22 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es la musculatura del Golpeador(1-15): ");
                                                 int stats = leer.nextInt();
+                                                try {
+                                                    validarMusc(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                
                                                 System.out.println("Cual es el reflejo del Golpeador(1-10): ");
                                                 int stat = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                try {
+                                                    validarOReflejo(stat);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -630,11 +729,17 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                 }
                                             }
                                             while(x){
-                                                System.out.println("Cual es el reflejo del Cazador(1-15): ");
+                                                System.out.println("Cual es el reflejo del Cazador(1-10): ");
                                                 int stats = leer.nextInt();
+                                                try {
+                                                    validarOReflejo(stats);
+                                                } catch (Misexcepcionts ex) {
+                                                    System.out.println(ex.getMessage());
+                                                    break;
+                                                }
                                                 System.out.println("Cual es el peso del cazador: ");
                                                 int stat = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -658,7 +763,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                             while(x){
                                                 System.out.println("Cual es el peso del Bucador: ");
                                                 int stats = leer.nextInt();
-                                                if(equipos.get(v).getCapitan().equals(null)){
+                                                if(equipos.get(v).getCapitan()==null){
                                                     System.out.println("Quiere que este sea su capitan[s/n]: ");
                                                     char cap = leer.next().charAt(0);
                                                     
@@ -788,8 +893,22 @@ public class Lab4_SergioSuazoAlessandroReyes {
             }//fin del switch menu
         }//fin del while menu
     }//fin del main
+    static void validarOReflejo(int x)throws Misexcepcionts{
+        if(x < 0 || x > 10){
+            throw new Misexcepcionts(Color.red,"\n Numero fuera de las opciones\n ");
+        }
+    }
+    static void validarMusc(int x)throws Misexcepcionts{
+        if(x < 0 || x > 15){
+            throw new Misexcepcionts(Color.red,"\n Numero fuera de las opciones\n ");
+        }
+    }
+    static void validarcant(int v)throws Misexcepcionts{
+        if(equipos.get(v).getJugadores().size() == 7){
+            throw new Misexcepcionts(Color.red,"\n este equipo ya tiene todos sus jugadores\n ");
+        }
+    }
     
-
 
 
 
