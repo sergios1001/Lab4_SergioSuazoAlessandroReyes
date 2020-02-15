@@ -910,67 +910,6 @@ public class Lab4_SergioSuazoAlessandroReyes {
     }
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     
     
@@ -1006,1419 +945,518 @@ public class Lab4_SergioSuazoAlessandroReyes {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-public static void Simulacion(Equipo a,Equipo b)
-{
-    int marcador1=0,marcador2=0;
-    int select,jugada;
-    Jugador x;
-    int contb1=0,contb2=0,conta1=0,conta2=0;
-    boolean flag,barrera1=false,snitch=false,atajar1=false,barrera2=false,atajar2=false;
-    while(snitch=false)
+    public static void Simulacion(Equipo a,Equipo b)
     {
-        for (int i = 0; i < a.getJugadores().size(); i++) {
-        System.out.println(i+"- "+a.getJugadores().get(i));
-        }
-        System.out.print("Seleccione al jugador que desea utilizar: ");
-        select=leer.nextInt();
-        x=a.getJugadores().get(select);
-        System.out.print("1-Normal \n"
-                + "2-Trampa\n"
-                + "Seleccione la jugada: ");
-        jugada=leer.nextInt();
-        if(x instanceof Guardian)
+        int marcador1=0,marcador2=0;
+        int select,jugada;
+        Jugador x;
+        int contb1=0,contb2=0,conta1=0,conta2=0;
+        boolean flag,barrera1=false,snitch=false,atajar1=false,barrera2=false,atajar2=false;
+        while(snitch=false)
         {
-            if(jugada==1)
-            {
-                int vel=100;
-                for (int i = 0; i < b.getJugadores().size(); i++) {
-                    if(b.getJugadores().get(i) instanceof Cazador)
-                    {
-                        if(vel>((Cazador)b.getJugadores().get(i)).getVelocidad())
-                        {
-                            vel=((Cazador)b.getJugadores().get(i)).getVelocidad();
-                        }
-                    }
-                }
-                flag=x.Juego(vel, true);
-                if(flag)
-                {
-                    ((Guardian) x).setAgilidad(((Guardian) x).getAgilidad()+8);
-                    System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") Atajo un gol");
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") no atajo el gol");
-                    marcador2+=10;
-                }
+            //JUGADA DEL USUARIO
+
+            for (int i = 0; i < a.getJugadores().size(); i++) {
+            System.out.println(i+"- "+a.getJugadores().get(i));
             }
-            if(jugada==2)
+            System.out.print("Seleccione al jugador que desea utilizar: ");
+            select=leer.nextInt();
+            x=a.getJugadores().get(select);
+            System.out.print("1-Normal \n"
+                    + "2-Trampa\n"
+                    + "Seleccione la jugada: ");
+            jugada=leer.nextInt();
+            if(x instanceof Guardian)
             {
-                int rand=1+random.nextInt(100);
-                flag=x.Trampa(rand);
-                if(flag)
+                if(atajar1)
                 {
-                    System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") Creo barreras invisibles frente a los aros");
-                    barrera1=true;
-                    contb1=2;
+                    System.out.println("El guardian no puede atajar");
                 }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") No pudo crear barreras, no puede atajar por 2 turnos");
-                    atajar1=true;
-                    conta1=2;
-                }
-            }
-        }
-        if(x instanceof Golpeador)
-        {
-            if(jugada==1)
-            {
-                int opcion;
-                System.out.print("1-Atacar \n"
-                        + "2-Defender \n"
-                        + "Seleccione la opcion: ");
-                opcion=leer.nextInt();
-                if(opcion==1)
-                {
-                    int suma=0;
-                    for (int i = 0; i < b.getJugadores().size(); i++) {
-                        if(b.getJugadores().get(i) instanceof Golpeador)
-                        {
-                            suma+=((Golpeador)b.getJugadores().get(i)).getFuerza();
-                        }
-                    }
-                    flag=x.Juego(suma, true);
-                    if(flag)
-                    {
-                        ((Golpeador) x).setFuerza(((Golpeador) x).getFuerza()+10);
-                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Ataco exitosamente");
-                    }
-                    else
-                    {
-                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") no pudo atacar");
-                    
-                    }
-                }
-                else
+                else if(jugada==1)
                 {
                     int vel=100;
                     for (int i = 0; i < b.getJugadores().size(); i++) {
-                        if(b.getJugadores().get(i) instanceof Golpeador)
+                        if(b.getJugadores().get(i) instanceof Cazador)
                         {
-                            if(vel>((Golpeador)b.getJugadores().get(i)).getAgilidad())
+                            if(vel>((Cazador)b.getJugadores().get(i)).getVelocidad())
                             {
-                                vel=((Golpeador)b.getJugadores().get(i)).getAgilidad();
+                                vel=((Cazador)b.getJugadores().get(i)).getVelocidad();
                             }
                         }
                     }
-                    flag=x.Juego(vel,false);
+                    flag=x.Juego(vel, true);
                     if(flag)
                     {
-                        ((Golpeador) x).setAgilidad(((Golpeador) x).getAgilidad()+10);
-                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Defendio a su compañero");
+                        ((Guardian) x).setAgilidad(((Guardian) x).getAgilidad()+8);
+                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") Atajo un gol");
                     }
                     else
                     {
-                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") no defendio a su compañero");
-                    
+                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") no atajo el gol");
+                        marcador2+=10;
                     }
                 }
+                else if(jugada==2)
+                {
+                    int rand=1+random.nextInt(100);
+                    flag=x.Trampa(rand);
+                    if(flag)
+                    {
+                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") Creo barreras invisibles frente a los aros");
+                        barrera1=true;
+                        contb1=2;
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") No pudo crear barreras, no puede atajar por 2 turnos");
+                        atajar1=true;
+                        conta1=2;
+                    }
+                }
+            }
+            if(x instanceof Golpeador)
+            {
+                if(jugada==1)
+                {
+                    int opcion;
+                    System.out.print("1-Atacar \n"
+                            + "2-Defender \n"
+                            + "Seleccione la opcion: ");
+                    opcion=leer.nextInt();
+                    if(opcion==1)
+                    {
+                        int suma=0;
+                        for (int i = 0; i < b.getJugadores().size(); i++) {
+                            if(b.getJugadores().get(i) instanceof Golpeador)
+                            {
+                                suma+=((Golpeador)b.getJugadores().get(i)).getFuerza();
+                            }
+                        }
+                        flag=x.Juego(suma, true);
+                        if(flag)
+                        {
+                            ((Golpeador) x).setFuerza(((Golpeador) x).getFuerza()+10);
+                            System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Ataco exitosamente");
+                        }
+                        else
+                        {
+                            System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") no pudo atacar");
 
-            }
-            if(jugada==2)
-            {
-                int rand=1+random.nextInt(100);
-                flag=x.Trampa(rand);
-                if(flag)
-                {
-                    System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Creo una burbuja protectora");
-                    for (int i = 0; i < a.getJugadores().size(); i++) {
-                        if(a.getJugadores().get(i) instanceof Golpeador)
-                        {
-                            ((Golpeador)a.getJugadores().get(i)).setAgilidad(((Golpeador)a.getJugadores().get(i)).getAgilidad()+10);
-                            ((Golpeador)a.getJugadores().get(i)).setFuerza(((Golpeador)a.getJugadores().get(i)).getFuerza()+10);
                         }
-                    }
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") No pudo crear burbujar protectoras");
-                    for (int i = 0; i < a.getJugadores().size(); i++) {
-                        if(a.getJugadores().get(i) instanceof Golpeador)
-                        {
-                            ((Golpeador)a.getJugadores().get(i)).setAgilidad(((Golpeador)a.getJugadores().get(i)).getAgilidad()-10);
-                            ((Golpeador)a.getJugadores().get(i)).setFuerza(((Golpeador)a.getJugadores().get(i)).getFuerza()-15);
-                        }
-                    }
-                }
-            }
-        }
-        
-        if(x instanceof Cazador)
-        {
-            if(jugada==1)
-            {
-                int ag=0;
-                for (int i = 0; i < b.getJugadores().size(); i++) {
-                    if(b.getJugadores().get(i) instanceof Guardian)
-                    {
-                        ag=((Guardian)b.getJugadores().get(i)).getAgilidad();
-                    }
-                }
-                flag=x.Juego(ag, true);
-                if(flag)
-                {
-                    ((Cazador) x).setAgilidad(((Cazador) x).getAgilidad()+6);
-                    ((Cazador) x).setVelocidad(((Cazador) x).getVelocidad()+6);
-                    System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") Metio un gol");
-                    marcador1+=10;
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") no metio el gol");
-                }
-            }
-            if(jugada==2)
-            {
-                int rand=1+random.nextInt(100);
-                flag=x.Trampa(rand);
-                if(flag)
-                {
-                    System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") Encanto la escoba para volar mas rapido");
-                    for (int i = 0; i < a.getJugadores().size(); i++) {
-                        if(a.getJugadores().get(i) instanceof Cazador)
-                        {
-                            ((Cazador)a.getJugadores().get(i)).setAgilidad(((Cazador)a.getJugadores().get(i)).getAgilidad()+6);
-                            ((Cazador)a.getJugadores().get(i)).setVelocidad(((Cazador)a.getJugadores().get(i)).getVelocidad()+6);
-                        }
-                    }
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") No pudo encantar la escoba");
-                    for (int i = 0; i < a.getJugadores().size(); i++) {
-                        if(a.getJugadores().get(i) instanceof Cazador)
-                        {
-                            ((Cazador)a.getJugadores().get(i)).setVelocidad(3);
-                        }
-                    }
-                }
-            }
-        }
-        if(x instanceof Buscador)
-        {
-            if(jugada==1)
-            {
-                int ag=0;
-                for (int i = 0; i < b.getJugadores().size(); i++) {
-                    if(b.getJugadores().get(i) instanceof Buscador)
-                    {
-                        ag=((Buscador)b.getJugadores().get(i)).getVelocidad();
-                    }
-                }
-                flag=x.Juego(ag, true);
-                if(flag)
-                {
-                    
-                    System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") atrapo la Snitch Dorada");
-                    snitch=true;
-                    marcador1+=150;
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") no atrapo la Snitch Dorada");
-                }
-            }
-            if(jugada==2)
-            {
-                int rand=1+random.nextInt(100);
-                flag=x.Trampa(rand);
-                if(flag)
-                {
-                    System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") Pudo atraer la snitch con su varita");
-                    marcador1+=150;
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") No pudo atraer la snitch con la varita, DESCALIFICADO DEL JUEGO");
-                    snitch=true;
-                }
-            }
-        }
-        
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //JUGADA DE LA MAQUINA
-        
-        int r=random.nextInt(b.getJugadores().size()-1);
-        jugada=1+random.nextInt(2);
-        x=b.getJugadores().get(r);
-        if(x instanceof Guardian)
-        {
-            if(jugada==1)
-            {
-                int vel=100;
-                for (int i = 0; i < b.getJugadores().size(); i++) {
-                    if(b.getJugadores().get(i) instanceof Cazador)
-                    {
-                        if(vel>((Cazador)b.getJugadores().get(i)).getVelocidad())
-                        {
-                            vel=((Cazador)b.getJugadores().get(i)).getVelocidad();
-                        }
-                    }
-                }
-                flag=x.Juego(vel, true);
-                if(flag)
-                {
-                    ((Guardian) x).setAgilidad(((Guardian) x).getAgilidad()+8);
-                    System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") Atajo un gol");
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") no atajo el gol");
-                    marcador2+=10;
-                }
-            }
-            if(jugada==2)
-            {
-                int rand=1+random.nextInt(100);
-                flag=x.Trampa(rand);
-                if(flag)
-                {
-                    System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") Creo barreras invisibles frente a los aros");
-                    barrera2=true;
-                    contb2=2;
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") No pudo crear barreras, no puede atajar por 2 turnos");
-                    atajar2=true;
-                    conta2=2;
-                }
-            }
-        }
-        if(x instanceof Golpeador)
-        {
-            if(jugada==1)
-            {
-                int opcion=1+random.nextInt(2);
-                
-                if(opcion==1)
-                {
-                    int suma=0;
-                    for (int i = 0; i < a.getJugadores().size(); i++) {
-                        if(a.getJugadores().get(i) instanceof Golpeador)
-                        {
-                            suma+=((Golpeador)a.getJugadores().get(i)).getFuerza();
-                        }
-                    }
-                    flag=x.Juego(suma, true);
-                    if(flag)
-                    {
-                        ((Golpeador) x).setFuerza(((Golpeador) x).getFuerza()+10);
-                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Ataco exitosamente");
                     }
                     else
                     {
-                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") no pudo atacar");
-                    
+                        int vel=100;
+                        for (int i = 0; i < b.getJugadores().size(); i++) {
+                            if(b.getJugadores().get(i) instanceof Golpeador)
+                            {
+                                if(vel>((Golpeador)b.getJugadores().get(i)).getAgilidad())
+                                {
+                                    vel=((Golpeador)b.getJugadores().get(i)).getAgilidad();
+                                }
+                            }
+                        }
+                        flag=x.Juego(vel,false);
+                        if(flag)
+                        {
+                            ((Golpeador) x).setAgilidad(((Golpeador) x).getAgilidad()+10);
+                            System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Defendio a su compañero");
+                        }
+                        else
+                        {
+                            System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") no defendio a su compañero");
+
+                        }
+                    }
+
+                }
+                if(jugada==2)
+                {
+                    int rand=1+random.nextInt(100);
+                    flag=x.Trampa(rand);
+                    if(flag)
+                    {
+                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Creo una burbuja protectora");
+                        for (int i = 0; i < a.getJugadores().size(); i++) {
+                            if(a.getJugadores().get(i) instanceof Golpeador)
+                            {
+                                ((Golpeador)a.getJugadores().get(i)).setAgilidad(((Golpeador)a.getJugadores().get(i)).getAgilidad()+10);
+                                ((Golpeador)a.getJugadores().get(i)).setFuerza(((Golpeador)a.getJugadores().get(i)).getFuerza()+10);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") No pudo crear burbujar protectoras");
+                        for (int i = 0; i < a.getJugadores().size(); i++) {
+                            if(a.getJugadores().get(i) instanceof Golpeador)
+                            {
+                                ((Golpeador)a.getJugadores().get(i)).setAgilidad(((Golpeador)a.getJugadores().get(i)).getAgilidad()-10);
+                                ((Golpeador)a.getJugadores().get(i)).setFuerza(((Golpeador)a.getJugadores().get(i)).getFuerza()-15);
+                            }
+                        }
                     }
                 }
-                else
+            }
+
+            if(x instanceof Cazador)
+            {
+                if(jugada==1)
+                {
+                    int ag=0;
+                    for (int i = 0; i < b.getJugadores().size(); i++) {
+                        if(b.getJugadores().get(i) instanceof Guardian)
+                        {
+                            ag=((Guardian)b.getJugadores().get(i)).getAgilidad();
+                        }
+                    }
+                    flag=x.Juego(ag, true);
+                    if(flag||atajar2)
+                    {
+                        ((Cazador) x).setAgilidad(((Cazador) x).getAgilidad()+6);
+                        ((Cazador) x).setVelocidad(((Cazador) x).getVelocidad()+6);
+                        System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") Metio un gol");
+                        marcador1+=10;
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") no metio el gol");
+                    }
+                }
+                if(jugada==2)
+                {
+                    int rand=1+random.nextInt(100);
+                    flag=x.Trampa(rand);
+                    if(flag)
+                    {
+                        System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") Encanto la escoba para volar mas rapido");
+                        for (int i = 0; i < a.getJugadores().size(); i++) {
+                            if(a.getJugadores().get(i) instanceof Cazador)
+                            {
+                                ((Cazador)a.getJugadores().get(i)).setAgilidad(((Cazador)a.getJugadores().get(i)).getAgilidad()+6);
+                                ((Cazador)a.getJugadores().get(i)).setVelocidad(((Cazador)a.getJugadores().get(i)).getVelocidad()+6);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") No pudo encantar la escoba");
+                        for (int i = 0; i < a.getJugadores().size(); i++) {
+                            if(a.getJugadores().get(i) instanceof Cazador)
+                            {
+                                ((Cazador)a.getJugadores().get(i)).setVelocidad(3);
+                            }
+                        }
+                    }
+                }
+            }
+            if(x instanceof Buscador)
+            {
+                if(jugada==1)
+                {
+                    int ag=0;
+                    for (int i = 0; i < b.getJugadores().size(); i++) {
+                        if(b.getJugadores().get(i) instanceof Buscador)
+                        {
+                            ag=((Buscador)b.getJugadores().get(i)).getVelocidad();
+                        }
+                    }
+                    flag=x.Juego(ag, true);
+                    if(flag)
+                    {
+
+                        System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") atrapo la Snitch Dorada");
+                        snitch=true;
+                        marcador1+=150;
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") no atrapo la Snitch Dorada");
+                    }
+                }
+                if(jugada==2)
+                {
+                    int rand=1+random.nextInt(100);
+                    flag=x.Trampa(rand);
+                    if(flag)
+                    {
+                        System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") Pudo atraer la snitch con su varita");
+                        marcador1+=150;
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") No pudo atraer la snitch con la varita, DESCALIFICADO DEL JUEGO");
+                        snitch=true;
+                    }
+                }
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //JUGADA DE LA MAQUINA
+
+            int r=random.nextInt(b.getJugadores().size()-1);
+            jugada=1+random.nextInt(2);
+            x=b.getJugadores().get(r);
+            if(x instanceof Guardian)
+            {
+                if(atajar2)
+                {
+                    System.out.println("El guardian no puede atajar");
+                }
+                else if(jugada==1)
                 {
                     int vel=100;
-                    for (int i = 0; i < a.getJugadores().size(); i++) {
-                        if(a.getJugadores().get(i) instanceof Golpeador)
+                    for (int i = 0; i < b.getJugadores().size(); i++) {
+                        if(b.getJugadores().get(i) instanceof Cazador)
                         {
-                            if(vel>((Golpeador)a.getJugadores().get(i)).getAgilidad())
+                            if(vel>((Cazador)b.getJugadores().get(i)).getVelocidad())
                             {
-                                vel=((Golpeador)a.getJugadores().get(i)).getAgilidad();
+                                vel=((Cazador)b.getJugadores().get(i)).getVelocidad();
                             }
                         }
                     }
-                    flag=x.Juego(vel,false);
+                    flag=x.Juego(vel, true);
                     if(flag)
                     {
-                        ((Golpeador) x).setAgilidad(((Golpeador) x).getAgilidad()+10);
-                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Defendio a su compañero");
+                        ((Guardian) x).setAgilidad(((Guardian) x).getAgilidad()+8);
+                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") Atajo un gol");
                     }
                     else
                     {
-                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") no defendio a su compañero");
-                    
+                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") no atajo el gol");
+                        marcador2+=10;
                     }
                 }
+                else if(jugada==2)
+                {
+                    int rand=1+random.nextInt(100);
+                    flag=x.Trampa(rand);
+                    if(flag)
+                    {
+                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") Creo barreras invisibles frente a los aros");
+                        barrera2=true;
+                        contb2=3;
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") No pudo crear barreras, no puede atajar por 2 turnos");
+                        atajar2=true;
+                        conta2=3;
+                    }
+                }
+            }
+            if(x instanceof Golpeador)
+            {
+                if(jugada==1)
+                {
+                    int opcion=1+random.nextInt(2);
 
-            }
-            if(jugada==2)
-            {
-                int rand=1+random.nextInt(100);
-                flag=x.Trampa(rand);
-                if(flag)
-                {
-                    System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Creo una burbuja protectora");
-                    for (int i = 0; i < b.getJugadores().size(); i++) {
-                        if(b.getJugadores().get(i) instanceof Golpeador)
-                        {
-                            ((Golpeador)b.getJugadores().get(i)).setAgilidad(((Golpeador)b.getJugadores().get(i)).getAgilidad()+10);
-                            ((Golpeador)b.getJugadores().get(i)).setFuerza(((Golpeador)b.getJugadores().get(i)).getFuerza()+10);
-                        }
-                    }
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") No pudo crear burbujar protectoras");
-                    for (int i = 0; i < b.getJugadores().size(); i++) {
-                        if(b.getJugadores().get(i) instanceof Golpeador)
-                        {
-                            ((Golpeador)b.getJugadores().get(i)).setAgilidad(((Golpeador)b.getJugadores().get(i)).getAgilidad()-10);
-                            ((Golpeador)b.getJugadores().get(i)).setFuerza(((Golpeador)b.getJugadores().get(i)).getFuerza()-15);
-                        }
-                    }
-                }
-            }
-        }
-        if(x instanceof Cazador)
-        {
-            if(jugada==1)
-            {
-                int ag=0;
-                for (int i = 0; i < a.getJugadores().size(); i++) {
-                    if(a.getJugadores().get(i) instanceof Guardian)
+                    if(opcion==1)
                     {
-                        ag=((Guardian)a.getJugadores().get(i)).getAgilidad();
-                    }
-                }
-                flag=x.Juego(ag, true);
-                if(flag)
-                {
-                    ((Cazador) x).setAgilidad(((Cazador) x).getAgilidad()+6);
-                    ((Cazador) x).setVelocidad(((Cazador) x).getVelocidad()+6);
-                    System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") Metio un gol");
-                    marcador1+=10;
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") no metio el gol");
-                }
-            }
-            if(jugada==2)
-            {
-                int rand=1+random.nextInt(100);
-                flag=x.Trampa(rand);
-                if(flag)
-                {
-                    System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") Encanto la escoba para volar mas rapido");
-                    for (int i = 0; i < b.getJugadores().size(); i++) {
-                        if(b.getJugadores().get(i) instanceof Cazador)
+                        int suma=0;
+                        for (int i = 0; i < a.getJugadores().size(); i++) {
+                            if(a.getJugadores().get(i) instanceof Golpeador)
+                            {
+                                suma+=((Golpeador)a.getJugadores().get(i)).getFuerza();
+                            }
+                        }
+                        flag=x.Juego(suma, true);
+                        if(flag)
                         {
-                            ((Cazador)b.getJugadores().get(i)).setAgilidad(((Cazador)b.getJugadores().get(i)).getAgilidad()+6);
-                            ((Cazador)b.getJugadores().get(i)).setVelocidad(((Cazador)b.getJugadores().get(i)).getVelocidad()+6);
+                            ((Golpeador) x).setFuerza(((Golpeador) x).getFuerza()+10);
+                            System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Ataco exitosamente");
+                        }
+                        else
+                        {
+                            System.out.println(x.getNombre()+"(Guadrian - ("+ x.getCasa()+") no pudo atacar");
+
                         }
                     }
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") No pudo encantar la escoba");
-                    for (int i = 0; i < b.getJugadores().size(); i++) {
-                        if(b.getJugadores().get(i) instanceof Cazador)
-                        {
-                            ((Cazador)b.getJugadores().get(i)).setVelocidad(3);
-                        }
-                    }
-                }
-            }
-        }
-        
-        if(x instanceof Buscador)
-        {
-            if(jugada==1)
-            {
-                int ag=0;
-                for (int i = 0; i < a.getJugadores().size(); i++) {
-                    if(a.getJugadores().get(i) instanceof Buscador)
+                    else
                     {
-                        ag=((Buscador)a.getJugadores().get(i)).getVelocidad();
+                        int vel=100;
+                        for (int i = 0; i < a.getJugadores().size(); i++) {
+                            if(a.getJugadores().get(i) instanceof Golpeador)
+                            {
+                                if(vel>((Golpeador)a.getJugadores().get(i)).getAgilidad())
+                                {
+                                    vel=((Golpeador)a.getJugadores().get(i)).getAgilidad();
+                                }
+                            }
+                        }
+                        flag=x.Juego(vel,false);
+                        if(flag)
+                        {
+                            ((Golpeador) x).setAgilidad(((Golpeador) x).getAgilidad()+10);
+                            System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Defendio a su compañero");
+                        }
+                        else
+                        {
+                            System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") no defendio a su compañero");
+
+                        }
+                    }
+
+                }
+                if(jugada==2)
+                {
+                    int rand=1+random.nextInt(100);
+                    flag=x.Trampa(rand);
+                    if(flag)
+                    {
+                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") Creo una burbuja protectora");
+                        for (int i = 0; i < b.getJugadores().size(); i++) {
+                            if(b.getJugadores().get(i) instanceof Golpeador)
+                            {
+                                ((Golpeador)b.getJugadores().get(i)).setAgilidad(((Golpeador)b.getJugadores().get(i)).getAgilidad()+10);
+                                ((Golpeador)b.getJugadores().get(i)).setFuerza(((Golpeador)b.getJugadores().get(i)).getFuerza()+10);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Golpeador - ("+ x.getCasa()+") No pudo crear burbujar protectoras");
+                        for (int i = 0; i < b.getJugadores().size(); i++) {
+                            if(b.getJugadores().get(i) instanceof Golpeador)
+                            {
+                                ((Golpeador)b.getJugadores().get(i)).setAgilidad(((Golpeador)b.getJugadores().get(i)).getAgilidad()-10);
+                                ((Golpeador)b.getJugadores().get(i)).setFuerza(((Golpeador)b.getJugadores().get(i)).getFuerza()-15);
+                            }
+                        }
                     }
                 }
-                flag=x.Juego(ag, true);
-                if(flag)
-                {
-                    
-                    System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") atrapo la Snitch Dorada");
-                    snitch=true;
-                    marcador1+=150;
-                }
-                else
-                {
-                    System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") no atrapo la Snitch Dorada");
-                }
             }
-            if(jugada==2)
+            if(x instanceof Cazador)
             {
-                int rand=1+random.nextInt(100);
-                flag=x.Trampa(rand);
-                if(flag)
+                if(jugada==1)
                 {
-                    System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") Pudo atraer la snitch con su varita");
-                    marcador1+=150;
+                    int ag=0;
+                    for (int i = 0; i < a.getJugadores().size(); i++) {
+                        if(a.getJugadores().get(i) instanceof Guardian)
+                        {
+                            ag=((Guardian)a.getJugadores().get(i)).getAgilidad();
+                        }
+                    }
+                    flag=x.Juego(ag, true);
+                    if(flag||atajar1)
+                    {
+                        ((Cazador) x).setAgilidad(((Cazador) x).getAgilidad()+6);
+                        ((Cazador) x).setVelocidad(((Cazador) x).getVelocidad()+6);
+                        System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") Metio un gol");
+                        marcador1+=10;
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") no metio el gol");
+                    }
                 }
-                else
+                if(jugada==2)
                 {
-                    System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") No pudo atraer la snitch con la varita, DESCALIFICADO DEL JUEGO");
-                    snitch=true;
+                    int rand=1+random.nextInt(100);
+                    flag=x.Trampa(rand);
+                    if(flag)
+                    {
+                        System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") Encanto la escoba para volar mas rapido");
+                        for (int i = 0; i < b.getJugadores().size(); i++) {
+                            if(b.getJugadores().get(i) instanceof Cazador)
+                            {
+                                ((Cazador)b.getJugadores().get(i)).setAgilidad(((Cazador)b.getJugadores().get(i)).getAgilidad()+6);
+                                ((Cazador)b.getJugadores().get(i)).setVelocidad(((Cazador)b.getJugadores().get(i)).getVelocidad()+6);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Cazador - ("+ x.getCasa()+") No pudo encantar la escoba");
+                        for (int i = 0; i < b.getJugadores().size(); i++) {
+                            if(b.getJugadores().get(i) instanceof Cazador)
+                            {
+                                ((Cazador)b.getJugadores().get(i)).setVelocidad(3);
+                            }
+                        }
+                    }
                 }
             }
+
+            if(x instanceof Buscador)
+            {
+                if(jugada==1)
+                {
+                    int ag=0;
+                    for (int i = 0; i < a.getJugadores().size(); i++) {
+                        if(a.getJugadores().get(i) instanceof Buscador)
+                        {
+                            ag=((Buscador)a.getJugadores().get(i)).getVelocidad();
+                        }
+                    }
+                    flag=x.Juego(ag, true);
+                    if(flag)
+                    {
+
+                        System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") atrapo la Snitch Dorada");
+                        snitch=true;
+
+                        marcador1+=150;
+                        break;
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") no atrapo la Snitch Dorada");
+                    }
+                }
+                if(jugada==2)
+                {
+                    int rand=1+random.nextInt(100);
+                    flag=x.Trampa(rand);
+                    if(flag)
+                    {
+                        System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") Pudo atraer la snitch con su varita");
+                        marcador1+=150;
+                    }
+                    else
+                    {
+                        System.out.println(x.getNombre()+"(Buscador - ("+ x.getCasa()+") No pudo atraer la snitch con la varita, DESCALIFICADO DEL JUEGO");
+                        snitch=true;
+                        break;
+                    }
+                }
+            }
+
+            //Test de contadores + impresion del marcador
+
+            conta1--;
+            conta2--;
+            contb1--;
+            contb2--;
+            if(contb1==0)
+            {
+                barrera1=false;
+                System.out.println("Se termino la barrera de tu equipo");
+            }
+            if(contb2==0)
+            {
+                barrera2=false;
+                System.out.println("Se termino la barrera del oponente");
+            }
+            if(conta1==0)
+            {
+                atajar1=false;
+                System.out.println("Tu portero ya puede atajar");
+            }
+            if(conta2==0)
+            {
+                atajar2=false;
+                System.out.println("El equipo oponente ya puede atajar");
+            }
+
+            System.out.println("El marcador es: "+a.getCasa()+ " " + marcador1 +" - " + marcador2 + " "+ b.getCasa());
+            System.out.println("Desea seguir con el juego? (s/n)");
+            char resp=leer.next().charAt(0);
+            if(resp=='s'||resp=='S')
+            {
+                snitch=true;
+            }
         }
-        
-        
-        
-        conta1--;
-        conta2--;
-        contb1--;
-        contb2--;
-        if(contb1==0)
-        {
-            barrera1=false;
-            System.out.println("Se termino la barrera de tu equipo");
-        }
-        if(contb2==0)
-        {
-            barrera2=false;
-            System.out.println("Se termino la barrera del oponente");
-        }
-        if(conta1==0)
-        {
-            atajar1=false;
-            System.out.println("Tu portero ya puede atajar");
-        }
-        if(conta2==0)
-        {
-            atajar2=false;
-            System.out.println("El equipo oponente ya puede atajar");
-        }
-        
-        System.out.println("El marcador es: "+a.getCasa()+ " " + marcador1 +" - " + marcador2 + " "+ b.getCasa());
-        
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
