@@ -21,6 +21,16 @@ public class Lab4_SergioSuazoAlessandroReyes {
     
     public static void main(String[] args) {
         boolean r=true;
+        /*
+        equipos.add(new Equipo("Grifindor", 0, 0, 0, 0, 0, null));
+        equipos.get(0).getJugadores().add(new Buscador(160, "Harry Potter", "Gryffindor", 3, 10));
+        equipos.get(0).getJugadores().add(new Guardian(10, "Ron Wesley", "Gryffindor", 3, 12));
+        equipos.get(0).getJugadores().add(new Golpeador(10,8,"Adriana Parodi", "Gryffindor", 3, 2));
+        equipos.get(0).getJugadores().add(new Golpeador(7,7, "Alexandre", "Gryffindor", 3, 42));
+        equipos.get(0).getJugadores().add(new Cazador(165,6, "James Potter ", "Gryffindor", 3, 62));
+        equipos.get(0).getJugadores().add(new Cazador(166,5, "Albus Dumbledore", "Gryffindor", 3, 92));
+        equipos.get(0).getJugadores().add(new Cazador(150,4, "Sirius Black", "Gryffindor", 3, 52));
+        */
         while(r){
             System.out.print("1. CRUD Equipo" 
                     + "\n2. CRUD Jugadores" 
