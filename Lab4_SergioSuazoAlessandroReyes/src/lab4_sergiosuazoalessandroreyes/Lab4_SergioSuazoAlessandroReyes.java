@@ -176,10 +176,10 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                 if(equipos.get(v).getJugadores().get(i).getNumero() == num){
                                                     System.out.println("ELija otro numero de camisa, el seleccionado, ya esta en uso: ");
                                                     num = leer.nextInt();
-                                                    ver = false;
-                                                    
+                                                    i=0;
                                                 }
                                             }
+                                            ver = false;
                                         }
                                         System.out.println("1. Guardian"
                                                 + "\n2. Golpeador"
@@ -299,12 +299,12 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                         while(ver){
                                             for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
                                                 if(equipos.get(v).getJugadores().get(i).getNumero() == num){
-                                                    System.out.println("ELiga otro numero de camisa, el seleccionado, ya esta en uso: ");
+                                                    System.out.println("ELija otro numero de camisa, el seleccionado, ya esta en uso: ");
                                                     num = leer.nextInt();
-                                                    ver = false;
-                                                }else
-                                                    break;
+                                                    i=0;
+                                                }
                                             }
+                                            ver = false;
                                         }
                                         System.out.println("1. Guardian"
                                                 + "\n2. Golpeador"
@@ -424,12 +424,12 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                         while(ver){
                                             for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
                                                 if(equipos.get(v).getJugadores().get(i).getNumero() == num){
-                                                    System.out.println("ELiga otro numero de camisa, el seleccionado, ya esta en uso: ");
+                                                    System.out.println("ELija otro numero de camisa, el seleccionado, ya esta en uso: ");
                                                     num = leer.nextInt();
-                                                    ver = false;
-                                                }else
-                                                    break;
+                                                    i=0;
+                                                }
                                             }
+                                            ver = false;
                                         }
                                         System.out.println("1. Guardian"
                                                 + "\n2. Golpeador"
@@ -558,12 +558,12 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                         while(ver){
                                             for (int i = 0; i < equipos.get(v).getJugadores().size(); i++) {
                                                 if(equipos.get(v).getJugadores().get(i).getNumero() == num){
-                                                    System.out.println("ELiga otro numero de camisa, el seleccionado, ya esta en uso: ");
+                                                    System.out.println("ELija otro numero de camisa, el seleccionado, ya esta en uso: ");
                                                     num = leer.nextInt();
-                                                    ver = false;
-                                                }else
-                                                    break;
+                                                    i=0;
+                                                }
                                             }
+                                            ver = false;
                                         }
                                         System.out.println("1. Guardian"
                                                 + "\n2. Golpeador"
@@ -681,7 +681,69 @@ public class Lab4_SergioSuazoAlessandroReyes {
                             }
                             break;
                         case 'c'://modificar
-                            
+                            for (int i = 0; i < jugadores.size(); i++) {
+                                System.out.println(i+") "+jugadores.get(i).getNombre());
+                            }
+                            System.out.print("Elija el numero del jugador que desea modificar: ");
+                            int mod = leer.nextInt();
+                            int me=0, mej=0;
+                            boolean cap=false;
+                            for (int i = 0; i < equipos.size(); i++) {
+                                for (int j = 0; j < equipos.get(i).getJugadores().size(); j++) {
+                                    if(equipos.get(i).getJugadores().get(j).getNombre().equals(jugadores.get(mod).getNombre())){
+                                        me=i;
+                                        mej=j;
+                                        if(equipos.get(i).getCapitan().getNombre().equals(jugadores.get(mod).getNombre()))
+                                            cap = true;
+                                    }
+                                }
+                            }
+                            System.out.print("1) Nombre"
+                                    + "\n2) año que cursa en Hogwarts"
+                                    + "\n3) Numero de uniforme"
+                                    + "\nQue desea modificar de este jugador");
+                            int mod1 = leer.nextInt();
+                            switch(mod1){
+                                case 1:
+                                    System.out.print("Cual es el nuevo nombre que le quiere poner: ");
+                                    String nom = leer.nextLine();
+                                    if(cap){
+                                        equipos.get(me).getCapitan().setNombre(nom);
+                                    }
+                                    jugadores.get(mod).setNombre(nom);
+                                    equipos.get(me).getJugadores().get(mej).setNombre(nom);
+                                    break;
+                                case 2:
+                                    System.out.println("Por qué año esta curzando: ");
+                                    int a = leer.nextInt();
+                                    if(cap){
+                                        equipos.get(me).getCapitan().setAño(a);
+                                    }
+                                    jugadores.get(mod).setAño(a);
+                                    equipos.get(me).getJugadores().get(mej).setAño(a);
+                                    break;
+                                case 3:
+                                    System.out.println("Cual es el nuevo numero de uniforme que le quiere asignar: ");
+                                    int num = leer.nextInt();
+                                    boolean ver = true;
+                                    while (ver) {
+                                        for (int i = 0; i < equipos.get(me).getJugadores().size(); i++) {
+                                            if (equipos.get(me).getJugadores().get(i).getNumero() == num) {
+                                                System.out.println("ELija otro numero de camisa, el seleccionado, ya esta en uso: ");
+                                                num = leer.nextInt();
+                                                i = 0;
+                                            }
+                                        }
+                                        ver = false;
+                                    }
+                                    if(cap){
+                                        equipos.get(me).getCapitan().setNumero(num);
+                                    }
+                                    jugadores.get(mod).setNumero(num);
+                                    equipos.get(me).getJugadores().get(mej).setNumero(num);
+                                    System.out.println("Modificacion hecha con exito.");
+                                    break;
+                            }
                             break;
                         case 'd'://eliminar
                             for (int i = 0; i < jugadores.size(); i++) {
@@ -703,7 +765,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                             jugadores.remove(del);
                             System.out.println("Jugador eliminado con exito.");
                             break;
-                        case 'e'://ver starts
+                        case 'e'://ver stats
                             for (int i = 0; i < jugadores.size(); i++) {
                                 System.out.println(i+") "+jugadores.get(i).getNombre());
                             }
