@@ -10,7 +10,8 @@ package lab4_sergiosuazoalessandroreyes;
  * @author Sergio
  */
 public abstract class Jugador {
-    private String nombre,casa;
+    private String nombre;
+    private String casa;
     private int año,numero;
 
     public Jugador() {
