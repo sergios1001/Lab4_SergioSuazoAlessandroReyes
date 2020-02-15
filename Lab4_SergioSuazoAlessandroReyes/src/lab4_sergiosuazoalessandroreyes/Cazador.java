@@ -57,7 +57,7 @@ public class Cazador extends Jugador{
 
     @Override
     public String toString() {
-        return "Cazador{" + "peso=" + peso + ", reflejos=" + reflejos + ", velocidad=" + velocidad + ", agilidad=" + agilidad + '}';
+        return "Cazador:  peso=" + peso + ", reflejos=" + reflejos + ", velocidad=" + velocidad + ", agilidad=" + agilidad ;
     }
     
     

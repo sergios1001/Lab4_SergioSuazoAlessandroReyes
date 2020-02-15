@@ -38,7 +38,7 @@ public class Buscador extends Jugador{
 
     @Override
     public String toString() {
-        return "Buscador{" + "peso=" + peso + ", velocidad=" + velocidad + '}';
+        return "Buscador:  peso=" + peso + ", velocidad=" + velocidad;
     }
     
     

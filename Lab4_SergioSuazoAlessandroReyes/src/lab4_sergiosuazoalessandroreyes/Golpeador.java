@@ -49,7 +49,7 @@ public class Golpeador extends Jugador{
 
     @Override
     public String toString() {
-        return "Golpeador{" + "musculatura=" + musculatura + ", reflejos=" + reflejos + ", agilidad=" + agilidad + ", fuerza=" + fuerza + '}';
+        return "Golpeador:  musculatura=" + musculatura + ", reflejos=" + reflejos + ", agilidad=" + agilidad + ", fuerza=" + fuerza ;
     }
     
     @Override

@@ -57,7 +57,7 @@ public abstract class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "nombre=" + nombre + ", casa=" + casa + ", a\u00f1o=" + año + ", numero=" + numero + '}';
+        return nombre;
     }
     
     public abstract boolean Juego(int j,boolean b);
