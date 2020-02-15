@@ -63,7 +63,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                     + "\n2. Slytherin"
                                     + "\n3. Ravenclaw"
                                     + "\n4. Hufflepuff"
-                                    + "De que casa proviene: ");
+                                    + "\nDe que casa proviene: ");
                             int c = leer.nextInt();
                             if(c==1){
                                 for (int i = 0; i < equipos.size(); i++) {
@@ -76,7 +76,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 int pg = leer.nextInt();
                                 System.out.print("Cuantos partidos tiene perdidos: ");
                                 int pp = leer.nextInt();
-                                equipos.add(new Equipo());
+                                equipos.add(new Equipo("Gryffindor", pg, pp, 0, 0, 0, null));
                             }else if(c==2){
                                 for (int i = 0; i < equipos.size(); i++) {
                                     if(equipos.get(i).getCasa().equals("Slytherin")){
@@ -88,7 +88,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 int pg = leer.nextInt();
                                 System.out.print("Cuantos partidos tiene perdidos: ");
                                 int pp = leer.nextInt();
-                                equipos.add(new Equipo());
+                                equipos.add(new Equipo("Slytherin", pg, pp, 0, 0, 0, null));
                             }else if(c==3){
                                 for (int i = 0; i < equipos.size(); i++) {
                                     if(equipos.get(i).getCasa().equals("Ravenclaw")){
@@ -100,7 +100,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 int pg = leer.nextInt();
                                 System.out.print("Cuantos partidos tiene perdidos: ");
                                 int pp = leer.nextInt();
-                                equipos.add(new Equipo());
+                                equipos.add(new Equipo("Ravenclaw", pg, pp, 0, 0, 0, null));
                             }else if(c==4){
                                 for (int i = 0; i < equipos.size(); i++) {
                                     if(equipos.get(i).getCasa().equals("Hufflepuff")){
@@ -112,7 +112,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                 int pg = leer.nextInt();
                                 System.out.print("Cuantos partidos tiene perdidos: ");
                                 int pp = leer.nextInt();
-                                equipos.add(new Equipo());
+                                equipos.add(new Equipo("Hufflepuff", pg, pp, 0, 0, 0, null));
                             }
                             break;
                         case 'b'://listar
@@ -172,13 +172,21 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                         + "\n2. Slytherin"
                                         + "\n3. Ravenclaw"
                                         + "\n4. Hufflepuff"
-                                        + "De que casa proviene: ");
+                                        + "\nDe que casa proviene: ");
                                 int c = leer.nextInt();
                                 if(c == 1){
                                     int v=0;
+                                    boolean ap= true;
                                     for (int i = 0; i < equipos.size(); i++) {
-                                        if(equipos.get(i).getCasa().equals("Gryffindor"))
+                                        if(equipos.get(i).getCasa().equals("Gryffindor")){
                                             v=i;
+                                        }else if(i == equipos.size()-1 || !equipos.get(i).getCasa().equals("Gryffindor")){
+                                            System.out.println("El equipo no existe.");
+                                            ap = false;
+                                        }
+                                    }
+                                    if(!ap){
+                                        break;
                                     }
                                     if(equipos.get(v).getJugadores().size() == 7){
                                         try {
@@ -189,6 +197,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                         }
                                     } else {
                                         System.out.print("Cual es el nombre del jugador: ");
+                                        leer.nextLine();
                                         String n = leer.nextLine();
                                         System.out.print("Que año cursa en Hogwarts: ");
                                         int a = leer.nextInt();
@@ -219,7 +228,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el reflejo del guardian(1-10): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -249,7 +258,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es la musculatura del Golpeador(1-15): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -284,7 +293,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el reflejo del Cazador(1-15): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -314,7 +323,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el peso del Bucador: ");
                                                 int stats = leer.nextInt();
                                                 if(equipos.get(v).getCapitan()==null){
@@ -330,15 +339,26 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                     }
                                 }else if(c==2){
                                     int v=0;
+                                    boolean ap = true;
                                     for (int i = 0; i < equipos.size(); i++) {
-                                        if(equipos.get(i).getCasa().equals("Slytherin"))
+                                        if(equipos.get(i).getCasa().equals("Slytherin")){
                                             v=i;
+                                            break;
+                                        }else if(i == equipos.size()-1 || !equipos.get(i).getCasa().equals("Slytherin")){
+                                            System.out.println("El equipo no existe.");
+                                            ap = false;
+                                        }
+                                            
                                     }
-                                    if(equipos.get(v).getJugadores().size() == 7){
+                                    if(!ap){
+                                        break;
+                                    }
+                                    if(equipos.get(v).getJugadores().size() == 7 && ap){
                                         System.out.println("Error, este equipo ya tiene todos sus jugadores.");
                                         break;
                                     }else{
                                         System.out.print("Cual es el nombre del jugador: ");
+                                        leer.nextLine();
                                         String n = leer.nextLine();
                                         System.out.print("Que año cursa en Hogwarts: ");
                                         int a = leer.nextInt();
@@ -369,7 +389,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el reflejo del guardian(1-10): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -399,7 +419,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es la musculatura del Golpeador(1-15): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -435,7 +455,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el reflejo del Cazador(1-10): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -464,7 +484,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el peso del Bucador: ");
                                                 int stats = leer.nextInt();
                                                 if(equipos.get(v).getCapitan()==null){
@@ -480,15 +500,25 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                     }
                                 }else if(c==3){
                                     int v=0;
+                                    boolean ap=true;
                                     for (int i = 0; i < equipos.size(); i++) {
-                                        if(equipos.get(i).getCasa().equals("Ravenclaw"))
+                                        if(equipos.get(i).getCasa().equals("Ravenclaw")){
                                             v=i;
+                                            break;
+                                        }else if(i == equipos.size()-1 && !equipos.get(i).getCasa().equals("Ravenclaw")){
+                                            System.out.println("El equipo no existe.");
+                                            ap = false;
+                                        }
                                     }
-                                    if(equipos.get(v).getJugadores().size() == 7){
+                                    if(!ap){
+                                        break;
+                                    }
+                                    if(equipos.get(v).getJugadores().size() == 7 && ap){
                                         System.out.println("Error, este equipo ya tiene todos sus jugadores.");
                                         break;
                                     }else{
                                         System.out.print("Cual es el nombre del jugador: ");
+                                        leer.nextLine();
                                         String n = leer.nextLine();
                                         System.out.print("Que año cursa en Hogwarts: ");
                                         int a = leer.nextInt();
@@ -519,7 +549,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el reflejo del guardian(1-10): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -549,7 +579,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es la musculatura del Golpeador(1-15): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -588,7 +618,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el reflejo del Cazador(1-15): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -620,7 +650,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el peso del Bucador: ");
                                                 int stats = leer.nextInt();
                                                 if(equipos.get(v).getCapitan()==null){
@@ -639,11 +669,19 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                     }
                                 }else if(c==4){
                                     int v=0;
+                                    boolean ap = true;
                                     for (int i = 0; i < equipos.size(); i++) {
-                                        if(equipos.get(i).getCasa().equals("Hufflepuff"))
-                                            v=i;
+                                        if(equipos.get(i).getCasa().equals("Hufflepuff")){
+                                            break;
+                                        }else if(i == equipos.size()-1 || !equipos.get(i).getCasa().equals("Hufflepuff")){
+                                            System.out.println("El equipo no existe.");
+                                            ap = false;
+                                        }
                                     }
-                                    if(equipos.get(v).getJugadores().size() == 7){
+                                    if(!ap){
+                                        break;
+                                    }
+                                    if(equipos.get(v).getJugadores().size() == 7 && ap){
                                         System.out.println("Error, este equipo ya tiene todos sus jugadores.");
                                         break;
                                     }else{
@@ -747,7 +785,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el reflejo del Cazador(1-10): ");
                                                 int stats = leer.nextInt();
                                                 try {
@@ -779,7 +817,7 @@ public class Lab4_SergioSuazoAlessandroReyes {
                                                     break;
                                                 }
                                             }
-                                            while(x){
+                                            if(x){
                                                 System.out.println("Cual es el peso del Bucador: ");
                                                 int stats = leer.nextInt();
                                                 if(equipos.get(v).getCapitan()==null){
